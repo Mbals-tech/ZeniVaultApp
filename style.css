@@ -1,0 +1,166 @@
+/* ========== GENERAL ========== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f3ec;
+  color: #3b2f23;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  background: #fffaf5;
+  text-align: center;
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 70px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #4c3525;
+  margin: 0;
+}
+
+a {
+  color: #4c3525;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========== MAIN CONTENT ========== */
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+h2 {
+  color: #3b2f23;
+  margin-top: 0;
+  border-bottom: 2px solid #e6d4b6;
+  padding-bottom: 0.5rem;
+}
+
+/* ========== PACKAGE CARDS ========== */
+.packages {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: #fdf8f2;
+  padding: 1rem;
+  border: 1px solid #e5d0b5;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0.3rem 0;
+  color: #4c3525;
+}
+
+/* ========== FORM ========== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+input, select {
+  padding: 0.7rem;
+  border: 1px solid #c6b6a2;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input[type="file"] {
+  border: none;
+  background: #f8f3ec;
+}
+
+button, .btn {
+  background: #6b4b2c;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background: #4c3525;
+}
+
+/* ========== NOTES & CONTACT ========== */
+.note {
+  color: #6b4b2c;
+  font-style: italic;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background: #25d366;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.whatsapp-btn:hover {
+  background: #1da851;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 1.2rem 0;
+  background: #fffaf5;
+  color: #4c3525;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+/* ========== WITHDRAWAL FORM ========== */
+.withdraw {
+  background: #fffaf5;
+  border-left: 4px solid #c79a65;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.withdraw h2 {
+  color: #4c3525;
+  margin-bottom: 1rem;
+}
+
+.withdraw form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
