@@ -53,10 +53,13 @@
       </div>
     </section>
 
-    <!-- 🧾 Registration Form -->
+    <!-- 🧾 Registration Form (Netlify Forms) -->
     <section class="form-section">
-      <h2>Register Your Investment</h2>
-      <form action="https://formspree.io/f/meorwgbn" method="POST">
+      <h2>Register & Upload Proof</h2>
+      <form name="zenivault-register" method="POST" data-netlify="true" enctype="multipart/form-data" action="thank-you.html">
+        <!-- Hidden input for Netlify -->
+        <input type="hidden" name="form-name" value="zenivault-register" />
+
         <label>Full Name</label>
         <input type="text" name="fullname" required />
 
@@ -76,5 +79,20 @@
         <label>Referrer Phone (Optional)</label>
         <input type="text" name="referrer" placeholder="e.g. 083 123 4567" />
 
+        <label>Upload Proof of Payment</label>
+        <input type="file" name="proof" accept=".jpg,.jpeg,.png,.pdf" required />
+
         <button type="submit" class="btn">Submit Registration</button>
       </form>
+    </section>
+
+    <section class="contact">
+      <a href="https://wa.me/27834238988" class="whatsapp-btn">💬 WhatsApp Admin</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Zeni Vault. All rights reserved.</p>
+  </footer>
+</body>
+</html>
