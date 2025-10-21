@@ -5,33 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zeni Vault | Secure Investments</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* ===== BASE STYLE ===== */
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8f3ec;
-      color: #3b2f23;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <img src="assets/logo.png" alt="Zeni Vault Logo" class="logo" />
+      <h1>Zeni Vault</h1>
+      <nav>
+        <a href="login.html" class="btn">Login</a>
+      </nav>
+    </div>
+  </header>
 
-    header {
-      background: #fffaf5;
-      text-align: center;
-      padding: 1.5rem 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
+  <main>
+    <section class="intro">
+      <h2>Welcome to Zeni Vault</h2>
+      <p>
+        Invest securely and grow your savings daily. Select your package below,
+        make payment to our official TymeBank account, and upload proof to begin earning.
+      </p>
+    </section>
 
-    .header-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    <section class="packages">
+      <h2>Investment Packages</h2>
+      <div class="card"><h3>Starter</h3><p>R200 • ROI R60/day • 45 days</p></div>
+      <div class="card"><h3>Starter Pro</h3><p>R500 • ROI R150/day • 45 days</p></div>
+      <div class="card"><h3>Standard</h3><p>R1000 • ROI R300/day • 45 days</p></div>
+      <div class="card"><h3>Premium</h3><p>R2000 • ROI R600/day • 45 days</p></div>
+      <div class="card"><h3>Elite</h3><p>R5000 • ROI R1500/day • 45 days</p></div>
+    </section>
 
-    .logo {
-      width: 70px;
-      margin-bottom: 10px;
-    }
+    <section class="bank-info">
+      <h2>Banking Details</h2>
+      <p><strong>Bank:</strong> TymeBank</p>
+      <p><strong>Account Number:</strong> 5300 1355 373</p>
+      <p><strong>Admin Contact:</strong> 083 423 8988</p>
+      <p class="note"><em>💸 Withdrawal fee 18% applies to all payouts.</em></p>
+    </section>
 
-    h1
+    <section class="referrals">
+      <h2>Referral Rewards</h2>
+      <p>Earn <strong>20%</strong> commission for every person you refer to Zeni Vault!</p>
+      <p>Your referral link format:</p>
+      <div class="ref-link">
+        https://zenivault.netlify.app/register?ref=<strong>YOUR PHONE NUMBER</strong>
+      </div>
+    </section>
+
+    <!-- 🧾 FORM SECTION -->
+    <section class="form-section">
+      <h2>Register & Upload Proof</h2>
+      <form action="https://formspree.io/f/meorwgbn" method="POST" enctype="multipart/form-data">
+        <label>Full Name</label>
+        <input type="text" name="fullname" required />
+
+        <label>Phone Number</label>
+        <input type="text" name="phone" required />
+
+        <label>Package</label>
+        <select name="package" required>
+          <option value="">Select…</option>
+          <option value="Starter">Starter — R200</option>
+          <option value="Starter Pro">Starter Pro — R500</option>
+          <option value="Standard">Standard — R1000</option>
+          <option value="Premium">Premium — R2000</option>
+          <option value="Elite">Elite — R5000</option>
+        </select>
+
+        <label>Referrer Phone (Optional)</label>
+        <input type="text" name="referrer" placeholder="e.g. 083 123 4567" />
+
+        <label>Upload Proof of Payment</label>
+        <input type="file" name="proof" accept=".jpg,.jpeg,.png,.pdf" required />
+
+        <button type="submit" class="btn">Submit Registration</button>
+      </form>
+    </section>
+
+    <section class="contact">
+      <a href="https://wa.me/27834238988" class="whatsapp-btn">💬 WhatsApp Admin</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Zeni Vault. All rights reserved.</p>
+  </footer>
+</body>
+</html>
