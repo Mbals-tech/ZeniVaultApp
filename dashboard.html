@@ -103,6 +103,33 @@
     }
   </style>
 </head>
+  <script>
+  async function loadData() {
+    try {
+      const res = await fetch('/.netlify/functions/getUserData');
+      const data = await res.json();
+
+      document.getElementById('totalInvestment').textContent = `R${data.totalInvestment.toFixed(2)}`;
+      document.getElementById('dailyROI').textContent = `R${data.dailyROI.toFixed(2)}`;
+
+      const tableBody = document.getElementById('withdrawalTable');
+      data.withdrawals.forEach(w => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${w.date}</td>
+          <td>R${w.amount}</td>
+          <td>${w.status}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    } catch (err) {
+      console.error('Error loading data:', err);
+    }
+  }
+
+  loadData();
+</script>
+
 <body>
   <header>
     <img src="assets/logo.png" alt="Zeni Vault Logo" class="logo" width="60" />
@@ -117,3 +144,4 @@
       <div class="stat-card">
         <h3>Total Investment</h3>
         <p id="totalInvestment">R0.00</p>
+
