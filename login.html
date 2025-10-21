@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login | Zeni Vault</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zeni Vault Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="header-container">
-      <img src="assets/logo.png" alt="Zeni Vault Logo" class="logo" />
-      <h1>Zeni Vault Login</h1>
-    </div>
+    <img src="assets/logo.png" alt="Zeni Vault Logo" class="logo">
+    <h1>Zeni Vault Login</h1>
   </header>
 
-  <main class="login-page">
-    <section class="login-section">
+  <main>
+    <section class="login-container">
       <h2>Member Login</h2>
       <p>Enter your registered phone number below to access your dashboard once approved.</p>
 
       <form id="loginForm">
-        <label>Phone Number</label>
-        <input type="text" id="phone" placeholder="e.g. 083 123 4567" required />
-        <button type="submit" class="btn">Login</button>
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" name="phone" placeholder="0711057695" required>
+
+        <button type="submit" class="login-btn">Login</button>
       </form>
-      <p id="message"></p>
+      <p id="login-message"></p>
     </section>
   </main>
 
@@ -33,46 +32,12 @@
   </footer>
 
   <script>
-const sheetUrl =
-  "https://docs.google.com/spreadsheets/d/1ryoIbonuQCbPHhIfnlAOtcPowP2zfvjyg_QYXrf8gXY/gviz/tq?tqx=out:json";
-
-document.getElementById("loginForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const phone = document.getElementById("phone").value.trim();
-  const message = document.getElementById("message");
-  message.textContent = "Checking your details, please wait...";
-
-  try {
-    const res = await fetch(sheetUrl);
-    const text = await res.text();
-    const json = JSON.parse(text.substr(47).slice(0, -2));
-    const rows = json.table.rows;
-
-    let found = false;
-    rows.forEach((row) => {
-      const sheetPhone = row.c[1]?.v?.toString().trim();
-      const approved = row.c[6]?.v?.toString().trim().toLowerCase();
-      if (sheetPhone === phone && approved === "yes") {
-        found = true;
-        localStorage.setItem("zeniUser", JSON.stringify({
-          name: row.c[0]?.v,
-          phone: sheetPhone,
-          package: row.c[2]?.v,
-          invested: row.c[3]?.v,
-          dailyROI: row.c[4]?.v,
-          startDate: row.c[5]?.v,
-          approved: approved
-        }));
-        window.location.href = "dashboard.html";
-      }
+    // Simple redirect for testing
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      // Always redirect to dashboard.html for testing
+      window.location.href = "dashboard.html";
     });
-
-    if (!found) {
-      message.textContent =
-        "Your payment hasn’t been approved yet or you are not registered.";
-    }
-  } catch (error) {
-    message.textContent = "Error connecting to the server.";
-  }
-});
-</script>
+  </script>
+</body>
+</html>
